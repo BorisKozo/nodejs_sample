@@ -1,0 +1,8 @@
+{
+  "name":"nodejs_example",
+  "private": true,
+  "version" : "0.0.0",
+  "dependencies":{
+      "express":"*"
+  }
+}
