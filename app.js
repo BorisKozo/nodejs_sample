@@ -1,8 +1,12 @@
 ﻿var express = require('express');
 var app = express();
 
-app.get("/hello_world", function (req, res) {
-    res.send("<h1>Hello World</h1>");
+app.use(express.logger());
+app.use(express.static(__dirname + '/public'));
+
+app.get("/todos", function (req, res) {
+    console.log("Todos called");
+    res.send();
 });
 
 app.listen(3000);

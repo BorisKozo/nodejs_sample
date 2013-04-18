@@ -32,8 +32,8 @@ define(['backbone', 'marionette', 'underscore', './app', './models/todo_item_col
             start: function () {
                 var _this = this,
                     todosCollection = new TodoItemCollection(),
-                    todoPromise = $.Deferred();
-                    //todoPromise = todosCollection.fetch();
+                    //todoPromise = $.Deferred();
+                    todoPromise = todosCollection.fetch();
 
                 require(['js/views/main_layout_view', 'js/views/footer_view'], function (MainLayoutView, FooterView) {
                     App.section.show(new MainLayoutView({ todosCollection: todosCollection }));
@@ -42,7 +42,7 @@ define(['backbone', 'marionette', 'underscore', './app', './models/todo_item_col
                         _this.vent.trigger("todosUpdated", { collection: todosCollection });
                     });
 
-                    todoPromise.resolve();
+                    
                 });
             }
 

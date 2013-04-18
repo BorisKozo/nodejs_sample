@@ -9,7 +9,8 @@ define(['backbone', './todo_item'], function (Backbone, TodoItem) {
                 item.set('isFinished', value);
             });
             this.trigger('finishChanged', this.toArray(), this);
-        }
+        },
+        url:"/todos"
     });
 
     return TodoItemCollection;
